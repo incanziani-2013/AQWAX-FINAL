@@ -212,3 +212,8 @@ void AQWAXAudioProcessor::setStateInformation (const void* data, int sizeInBytes
         if (xml->hasTagName(apvts.state.getType()))
             apvts.replaceState(juce::ValueTree::fromXml(*xml));
 }
+// Punto de entrada que JUCE usa para crear el plugin.
+juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
+{
+    return new AQWAXAudioProcessor();
+}
