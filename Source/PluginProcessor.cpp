@@ -158,7 +158,6 @@ void AQWAXAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::
     compressor.setRatio(1.2f + gloss * 1.0f);
     compressor.setAttack(25.0f);
     compressor.setRelease(100.0f);
-    compressor.setMakeUpGainDecibels(0.0f);
 
     juce::dsp::ProcessContextReplacing<float> compCtx(wetBlock);
     compressor.process(compCtx);
